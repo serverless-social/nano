@@ -1,5 +1,4 @@
 os: osx
-osx_image: xcode12
 
 install:
   - export CI=false 
@@ -11,11 +10,16 @@ install:
   - brew install autoconf automake libtool berkeley-db4 pkg-config openssl boost boost-build libevent gettext texinfo
   - aclocal --print-ac-dir
   - export PATH="/usr/local/opt/texinfo/bin:$PATH"
-  - printf "\e[33;1m%s\n" 'Execute autogen'
-  - ./autogen.sh
-  - ./configure
-  - printf "\e[33;1m%s\n" 'Make'
-  - make 
-  - printf "\e[33;1m%s\n" 'Install'
-  - make install
-  - nano -V
+
+
+deploy:
+  provider: script
+  script:
+    - printf "\e[33;1m%s\n" 'Execute autogen'
+    - ./autogen.sh
+    - ./configure
+    - printf "\e[33;1m%s\n" 'Make'
+    - make 
+    - printf "\e[33;1m%s\n" 'Install'
+    - make install
+    - nano -V
