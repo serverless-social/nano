@@ -9,16 +9,13 @@ install:
   - aclocal --print-ac-dir
   - export PATH="/usr/local/opt/texinfo/bin:$PATH"
 
-
-deploy:
-  provider: script
-  script:
-    - printf "\e[33;1m%s\n" 'Execute exit 0'
-    - ./autogen.sh
-    - ./configure
-    - printf "\e[33;1m%s\n" 'Make'
-    - make 
-    - printf "\e[33;1m%s\n" 'Install'
-    - make install
-    - nano -V
-    - exit 0
+script:
+  - printf "\e[33;1m%s\n" 'Execute exit 0'
+  - ./autogen.sh
+  - ./configure
+  - printf "\e[33;1m%s\n" 'Make'
+  - make 
+  - printf "\e[33;1m%s\n" 'Install'
+  - make install
+  - nano -V
+  - exit 0
