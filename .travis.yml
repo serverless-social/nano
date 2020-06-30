@@ -1,7 +1,9 @@
 os: osx
+osx_image: xcode12
 
 install:
   - echo "trigger 1"
+  - /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
   - gcc -v  
   - brew install autoconf automake libtool berkeley-db4 pkg-config openssl boost boost-build libevent gettext makeinfo texinfo
   - aclocal --print-ac-dir
