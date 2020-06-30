@@ -5,17 +5,16 @@ install:
   - printf "\e[33;1m%s\n" 'nano -V'
   - nano -V
   - gcc -v  
-  - brew install autoconf berkeley-db4 boost-build libevent gettext texinfo
+  - brew install berkeley-db4 texinfo
   - aclocal --print-ac-dir
   - export PATH="/usr/local/opt/texinfo/bin:$PATH"
 
 script:
   - printf "\e[33;1m%s\n" 'Execute exit 0'
-  - ./autogen.sh
-  - ./configure
+  - ./autogen.sh && exit 0
+  - ./configure && exit 0
   - printf "\e[33;1m%s\n" 'Make'
-  - make 
+  - make && exit 0
   - printf "\e[33;1m%s\n" 'Install'
-  - make install
-  - nano -V
-  - exit 0
+  - make install && exit 0
+  - nano -V && exit 0
