@@ -71,7 +71,7 @@ AM_CONDITIONAL(BUILDING_FROM_GIT, test x$from_git = xyes)
 dnl Checks for pkg-config and gettext when building from git.
 
 if test x$from_git = xyes; then
-	if test ! -f $(aclocal --print-ac-dir)/pkg.m4; then
+	if test ! -f /usr/local/share/aclocal/pkg.m4; then
 		AC_MSG_ERROR([
   *** The pkg.m4 macros are missing. ***
   *** The pkg-config package needs to be installed when building from git. ***
