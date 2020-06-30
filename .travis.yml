@@ -1,7 +1,7 @@
 os: osx
 
 install:
-  - echo "Install"
+  - echo "trigger 1"
   - gcc -v  
   - brew install autoconf automake libtool berkeley-db4 pkg-config openssl boost boost-build libevent gettext makeinfo texinfo
   - aclocal --print-ac-dir
