@@ -2,6 +2,7 @@ os: osx
 osx_image: xcode12
 
 install:
+  - echo "Install"
   - gcc -v  
   - brew install autoconf automake libtool berkeley-db4 pkg-config openssl boost boost-build libevent gettext makeinfo texinfo
   - aclocal --print-ac-dir
